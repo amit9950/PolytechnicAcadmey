@@ -41,23 +41,31 @@
         body {
             background-color: #f0f7ff;
             color: var(--text);
-            line-height: 1.6;
+            /* line-height: 1.6; */
             overflow-x: hidden;
-            margin: 0px;
-            padding: 0px;
+            margin: 0px !important;
+            padding: 0px !important;
 
         }
-
+.header{
+    width: 100%;
+    background-color: var(--primary);
+      position: sticky;
+            top: 0;
+            z-index: 100;
+              color: white;
+                 padding: 1rem 0;
+}
         .container {
-            width: 95%;
-            max-width: 1200px;
+            width: 100%;
+            /* max-width: 1200px; */
             margin: 0 auto;
-            padding: 0 10px;
+            padding: 0px;
             overflow: hidden;
         }
 
         /* Header Styles */
-        header {
+       header {
             background: linear-gradient(135deg, var(--primary), var(--dark));
             color: white;
             padding: 1rem 0;
@@ -65,7 +73,6 @@
             position: sticky;
             top: 0;
             z-index: 100;
-           
         }
 
         .header-content {
@@ -785,20 +792,21 @@
   
     margin-left: 60px;
 }
-.brand-name {
-      font-size: 30px;
-      font-weight: 700;
-      color: white;
-    }
-.half{
-    color: orange;
-}
-    </style>
+ .brand-name {
+            font-size: 30px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .brand-orange {
+            color: var(--accent);
+        }
+  </style>
 </head>
 
 <body>
     <!-- Header Section -->
-    <header>
+    <header class="header">
         <div class="container header-content">
              <div class="brand-name">
         <span class="brand-orange half">🎓 Polytechnic</span> Academy

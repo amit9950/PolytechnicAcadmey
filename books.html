@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polytechnic Academy - Books & PYQs</title>
+    <title>Books </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="./img assests/logo.jpg">
     <style>
         * {
             margin: 0;
@@ -22,7 +20,6 @@
             --light: #f5f9ff;
             --dark: #0d2a4d;
             --text: #333;
-            --books-color: #9c27b0;
         }
 
         body {
@@ -30,6 +27,8 @@
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            margin: 0px;
+            padding: 0px;
         }
 
         .container {
@@ -37,6 +36,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 10px;
+            overflow: hidden;
         }
 
         /* Header Styles */
@@ -56,25 +56,16 @@
             align-items: center;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            font-size: 2rem;
-            color: var(--accent);
-        }
-
-        .logo-text {
-            font-size: 1.6rem;
+      .brand-name {
+            font-size: 30px;
             font-weight: 700;
+            color: white;
         }
 
-        .logo-text span {
+        .brand-orange {
             color: var(--accent);
         }
+       
 
         .menu-toggle {
             display: none;
@@ -108,314 +99,7 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(26, 75, 140, 0.8), rgba(13, 42, 77, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 0.9rem 1.8rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
-        }
-
-        .btn:hover {
-            background-color: #e65c00;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 111, 0, 0.4);
-        }
-
-        .btn-books {
-            background-color: var(--books-color);
-            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
-        }
-
-        .btn-books:hover {
-            background-color: #7b1fa2;
-            box-shadow: 0 6px 20px rgba(156, 39, 176, 0.4);
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 3rem 0;
-            background-color: white;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            text-align: center;
-        }
-
-        .stat-item {
-            padding: 1.5rem;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-text {
-            color: #666;
-            font-size: 1rem;
-        }
-
-        /* Tabs Section */
-        .tabs-section {
-            padding: 2rem 0;
-            background-color: white;
-        }
-
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #e0e0e0;
-        }
-
-        .tab-btn {
-            background: none;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #666;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .tab-btn.active {
-            color: var(--primary);
-        }
-
-        .tab-btn.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary);
-        }
-
-        .tab-btn.books-tab.active {
-            color: var(--books-color);
-        }
-
-        .tab-btn.books-tab.active::after {
-            background-color: var(--books-color);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* Filter Section */
-        .filter-section {
-            padding: 2rem 0;
-            background-color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .filter-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .filter-group label {
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .filter-group select {
-            padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .filter-group select:focus {
-            border-color: var(--secondary);
-            outline: none;
-        }
-
-        .filter-actions {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-end;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        /* Resources Section */
-        .resources-section {
-            padding: 3rem 0;
-            background-color: var(--light);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--primary);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
-
-        .books-title::after {
-            background-color: var(--books-color);
-        }
-
-        .resources-container {
-            background-color: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .resources-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .resource-item {
-            background-color: var(--light);
-            border-radius: 10px;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s;
-            cursor: pointer;
-            border-left: 4px solid var(--primary);
-        }
-
-        .book-item {
-            border-left-color: var(--books-color);
-        }
-
-        .resource-item:hover {
-            transform: translateX(5px);
-            background-color: #e6f0ff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .book-item:hover {
-            background-color: #f3e5f5;
-        }
-
-        .resource-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-        }
-
-        .book-icon {
-            color: var(--books-color);
-        }
-
-        .resource-info h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .book-info h4 {
-            color: var(--books-color);
-        }
-
-        .resource-info p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .resource-meta {
-            display: flex;
-            gap: 10px;
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .resource-tag {
-            background-color: var(--secondary);
-            color: white;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-
-        .book-tag {
-            background-color: var(--books-color);
-        }
-
-        /* Search Results Section */
-        .search-results {
-            padding: 3rem 0;
-        }
-
-        /* Footer */
+        /* Footer Styles */
         footer {
             background: linear-gradient(135deg, var(--dark), var(--primary));
             color: white;
@@ -547,52 +231,9 @@
                 border-radius: 5px;
             }
 
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .filter-container {
-                grid-template-columns: 1fr;
-            }
-
-            .resources-list {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
             .footer-content {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
-            }
-            
-            .filter-actions {
-                flex-direction: column;
-            }
-            
-            .filter-actions .btn {
-                width: 100%;
-            }
-
-            .tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .tab-btn {
-                width: 100%;
-                text-align: center;
             }
         }
 
@@ -601,125 +242,59 @@
                 width: 98%;
                 padding: 0 5px;
             }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 2.5rem 0;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
 
             .footer-content {
                 grid-template-columns: 1fr;
             }
-
-            .resources-container {
-                padding: 1rem;
-            }
-
-            .resource-item {
-                padding: 1rem;
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-            }
-
-            .resource-icon {
-                font-size: 2rem;
-            }
-
-            .resource-info h4 {
-                font-size: 1rem;
-            }
-
-            .resource-info p {
-                font-size: 0.8rem;
-            }
-
-            .resource-meta {
-                justify-content: center;
-            }
-
-            .section-title {
-                font-size: 1.3rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .btn {
-                padding: 0.7rem 1.5rem;
-                font-size: 0.9rem;
-            }
+.brand-name {
+      font-size: 30px;
+      font-weight: 700;
+      color: white;
+    }
+.half{
+    color: orange;
+}
         }
 
-        @media (max-width: 400px) {
-            .logo-text {
-                font-size: 1.4rem;
-            }
-
-            .hero h1 {
-                font-size: 1.3rem;
-            }
-
-            .hero p {
-                font-size: 0.9rem;
-            }
-
-            .stat-number {
-                font-size: 1.8rem;
-            }
-
-            .stat-text {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        .no-results {
+        /* Main Content Styles */
+        .main-content {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 3rem;
-            color: #666;
-            font-size: 1.2rem;
+            padding: 2rem;
         }
-        
-        .search-info {
-            text-align: center;
-            margin: 1rem 0;
+
+        .coming-soon {
+            font-size: 2.5rem;
+            font-weight: 700;
             color: var(--primary);
-            font-weight: 500;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        .wait-message {
+            font-size: 1.2rem;
+            color: var(--text);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
-
 <body>
     <!-- Header Section -->
     <header>
         <div class="container header-content">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="logo-text">Polytechnic <span>Academy</span></div>
+         <div class="brand-name">
+                <span class="brand-orange">🎓 Polytechnic</span> Academy
             </div>
             <button class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
@@ -727,158 +302,20 @@
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                      <li><a href="books.html"><i class="fas fa-book"></i> books</a></li>
-                    <li><a href="Syallbus.html"><i class="fas fa-book"></i> Syallbus</a></li>
-                     <li><a href="admit.html"><i class="fas fa-search"></i> admit card</a></li>
-                    <li><a href="Extra.html"><i class="fas fa-pen"></i> Extra actvity</a></li>
-                     
-
+                    <li><a href="books.html"><i class="fas fa-star"></i> Books</a></li>
+                    <li><a href="admit.html"><i class="fas fa-filter"></i>Admit Card</a></li>
+                    <li><a href="Syallbus.html"><i class="fas fa-book"></i>Syllabus</a></li>
+                    <li><a href="Extra.html"><i class="fas fa-pen"></i>Extra actvity</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1 class="fade-in">Polytechnic Academy - Books & PYQs</h1>
-            <p class="fade-in">Access textbooks and previous year question papers for all Polytechnic branches. Prepare effectively with our organized collection.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-             
-                <a href="#resources" class="btn btn-books fade-in">Explore Books</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">6</div>
-                    <div class="stat-text">Engineering Branches</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">200+</div>
-                    <div class="stat-text">PYQ Papers</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">150+</div>
-                    <div class="stat-text">Textbooks</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">6</div>
-                    <div class="stat-text">Semesters Each</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tabs Section -->
-    <section class="tabs-section" id="resources">
-        <div class="container">
-            <div class="tabs">
-                <!-- <button class="tab-btn disactive" data-tab="pyqs">Previous Year Papers</button> -->
-                <button class="tab-btn books-tab" data-tab="books">Textbooks</button>
-            </div>
-            
-            <!-- PYQs Tab Content -->
-            <!-- <div class="tab-content active" id="pyqs-content">
-                <div class="resources-section">
-                    <h2 class="section-title">Previous Year Question Papers</h2>
-                    <div class="resources-container">
-                        <div id="featuredPdfList" class="resources-list">
-                            Featured PDF items will be dynamically generated here
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <! Books Tab Content -->
-            <div class="tab-content" id="books-content">
-                <div class="resources-section">
-                    <h2 class="section-title books-title">Recommended Textbooks</h2>
-                    <div class="resources-container">
-                        <div id="featuredBookList" class="resources-list">
-                            <!-- Featured Book items will be dynamically generated here -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Search Section -->
-    <section class="filter-section" id="search">
-        <div class="container">
-            <h2 class="section-title">Search Resources</h2>
-            <div class="filter-container">
-                <div class="filter-group">
-                    <label for="resourceType">Resource Type</label>
-                    <select id="resourceType">
-                        <option value="all">All Resources</option>
-                        <!-- <option value="pyq">Previous Year Papers</option> -->
-                        <option value="book">Textbooks</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="branch">Branch</label>
-                    <select id="branch">
-                        <option value="all">All Branches</option>
-                        <option value="cse">Computer Science & Engineering</option>
-                        <option value="ee">Electrical Engineering</option>
-                        <option value="civil">Civil Engineering</option>
-                        <option value="mechanical">Mechanical Engineering</option>
-                        <option value="electronics">Electronics Engineering</option>
-                        <option value="it">Information Technology</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="semester">Semester</label>
-                    <select id="semester">
-                        <option value="all">All Semesters</option>
-                        <option value="1">Semester 1</option>
-                        <option value="2">Semester 2</option>
-                        <option value="3">Semester 3</option>
-                        <option value="4">Semester 4</option>
-                        <option value="5">Semester 5</option>
-                        <option value="6">Semester 6</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="subject">Subject</label>
-                    <select id="subject">
-                        <option value="all">All Subjects</option>
-                        <!-- Subjects will be dynamically populated -->
-                    </select>
-                </div>
-
-                <div class="filter-actions">
-                    <button class="btn" onclick="applyFilters()">Search Resources</button>
-                    <button class="btn btn-outline" onclick="resetFilters()">Reset</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Search Results Section -->
-    <section class="search-results" id="search-results">
-        <div class="container">
-            <h2 class="section-title">Search Results</h2>
-            <div class="resources-container">
-                <div id="searchInfo" class="search-info"></div>
-                <div id="searchResultsList" class="resources-list">
-                    <!-- Search results will be dynamically generated here -->
-                </div>
-                <div id="noResults" class="no-results" style="display: none;">
-                    No resources found matching your search criteria. Try different filters.
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1 class="coming-soon">MORE UPDATE COMING SOON........</h1>
+        <p class="wait-message">Please wait while we prepare more exciting content for you. We're working hard to bring you the best educational resources.</p>
+    </div>
 
     <!-- Footer -->
     <footer id="contact">
@@ -886,11 +323,12 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Polytechnic Academy</h3>
-                    <p>Your premier destination for polytechnic textbooks and previous year question papers. We provide organized collections to help students prepare effectively.</p>
+                    <p>Your premier destination for polytechnic previous year question papers. We provide organized
+                        collections to help students prepare effectively.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@Polytechnicacademy99"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/amit_kumar_9950?igsh=MW15NmwwN2tvZDUyOQ=="><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -898,37 +336,34 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#resources"><i class="fas fa-chevron-right"></i> Resources</a></li>
-                        <li><a href="#search"><i class="fas fa-chevron-right"></i> Search</a></li>
+                        <li><a href="./books.html"><i class="fas fa-chevron-right"></i> Books</a></li>
+                        <li><a href="#filter"><i class="fas fa-chevron-right"></i> Search PYQs</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Branches</h3>
                     <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Computer Science</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Electrical Engineering</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Civil Engineering</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Mechanical Engineering</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Electronics Engineering</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Information Technology</a></li>
+                        <li><a href="#index"><i class="fas fa-chevron-right"></i> Computer Science</a></li>
+                        <li><a href="index"><i class="fas fa-chevron-right"></i> Electrical Engineering</a></li>
+                        <li><a href="index"><i class="fas fa-chevron-right"></i> Civil Engineering</a></li>
+                        <li><a href="index"><i class="fas fa-chevron-right"></i> Mechanical Engineering</a></li>
+                        <li><a href="index"><i class="fas fa-chevron-right"></i> Electronics Engineering</a></li>
+                        <li><a href="index"><i class="fas fa-chevron-right"></i> Information Technology</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Polytechnic Campus, Education Zone</a>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Polytechnic Campus,Madhogarh Jalaun</a>
                         </li>
-                        <li><a href="mailto:info@polytechnicacademy.com"><i class="fas fa-envelope"></i>
-                                info@polytechnicacademy.com</a></li>
-                        <li><a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 98765 43210</a></li>
+                        <li><a href="mailto:polytechnicstudent@gmail.com"><i class="fas fa-envelope"></i>
+                               polytechnicstudent@gmail.com</a></li>
+                        <li><a href="tel:+91865071XXXX"><i class="fas fa-phone"></i> +91 865017XXXX</a></li>
                         <li><a href="#"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 6:00 PM</a></li>
                     </ul>
                 </div>
             </div>
-            <!-- <div class="copyright">
-                &copy; 2023 Polytechnic Academy. All rights reserved. | Designed for Educational Purpose
-            </div> -->
-             <div class="copyright">
+            <div class="copyright">
                 <p>
                     Every great project begins with a spark of curiosity and dedication.
                     Crafted with 💻 passion and ❤️ love by
@@ -944,363 +379,6 @@
     </footer>
 
     <script>
-        // Complete Resource Data with all branches and semesters
-        const resourceData = [
-       
-            // Computer Science & Engineering (CSE) - Semester 1
-            { id: 1, title: "Applied Mathematics-I", branch: "cse", semester: "1", year: "2023", subject: "applied_maths_1", type: "pyq", path: "mathe.pdf", fileName: "cse_sem1_maths_2023.pdf" },
-            { id: 2, title: "Applied Physics", branch: "cse", semester: "1", year: "2023", subject: "applied_physics", type: "pyq", path: "./Physics_2023-DzqRu4wd.pdf", fileName: "cse_sem1_physics_2023.pdf" },
-            { id: 3, title: "Applied Chemistry", branch: "cse", semester: "1", year: "2023", subject: "applied_chemistry", type: "pyq", path: "./Chemistry_2023-lc__5PtM.pdf", fileName: "cse_sem1_chemistry_2023.pdf" },
-            { id: 4, title: "Communication Skills", branch: "cse", semester: "1", year: "2023", subject: "communication_skills", type: "pyq", path: "./Communication_2023-Cprg7vqD.pdf", fileName: "cse_sem1_comunication_skill_2023.pdf" },
-            { id: 5, title: "Technical Drawing", branch: "cse", semester: "1", year: "2023", subject: "technical_drawing", type: "pyq", path: "./TechnicalDrawing_2023-DEgcuE8P.pdf", fileName: "cse_sem1_technical_drawing_2023.pdf" },
-
-            // CSE - Semester 2
-            { id: 6, title: "Applied Mathematics-II", branch: "cse", semester: "2", year: "2023", subject: "applied_maths_2", type: "pyq", path: "./Math2-BNJA_Z41.pdf", fileName: "cse_sem2_maths_2023.pdf" },
-            { id: 7, title: "Applied Physics-II", branch: "cse", semester: "2", year: "2023", subject: "Applied_physics_II", type: "pyq", path: "./Physics2-CrH2Wqty.pdf", fileName: "cse_sem2_physics_2023.pdf" },
-            { id: 8, title: "IT System", branch: "cse", semester: "2", year: "2023", subject: "it_system", type: "pyq", path: "./Introduction To  IT System Paper 2025.pdf", fileName: "cse_sem2_it_system_2023.pdf" },
-            { id: 9, title: "FEEE", branch: "cse", semester: "2", year: "2023", subject: "FEEE", type: "pyq", path: "./FEEE paper 2025.pdf", fileName: "cse_sem2_feee_2023.pdf" },
-            { id: 10, title: "Engineering Mechanics", branch: "cse", semester: "2", year: "2023", subject: "Engineering_mechnics", type: "pyq", path: "./Engineering Mechanics Most Important Questions 2025.pdf", fileName: "cse_sem2_engineering_mechanics_2023.pdf" },
-
-            // Textbooks
-            // Computer Science & Engineering (CSE) - Semester 1
-            { id: 101, title: "Engineering Mathematics-I", branch: "cse", semester: "1", year: "2023", subject: "applied_maths_1", type: "book", path: "#", fileName: "eng_maths_1.pdf", author: "B.S. Grewal" },
-            { id: 102, title: "Engineering Physics", branch: "cse", semester: "1", year: "2023", subject: "applied_physics", type: "book", path: "#", fileName: "eng_physics.pdf", author: "R.K. Gaur" },
-            { id: 103, title: "Engineering Chemistry", branch: "cse", semester: "1", year: "2023", subject: "applied_chemistry", type: "book", path: "#", fileName: "eng_chemistry.pdf", author: "Jain & Jain" },
-            { id: 104, title: "Communication Skills", branch: "cse", semester: "1", year: "2023", subject: "communication_skills", type: "book", path: "#", fileName: "comm_skills.pdf", author: "Sanjay Kumar" },
-            { id: 105, title: "Engineering Drawing", branch: "cse", semester: "1", year: "2023", subject: "technical_drawing", type: "book", path: "#", fileName: "eng_drawing.pdf", author: "N.D. Bhatt" },
-
-            // CSE - Semester 2
-            { id: 106, title: "Engineering Mathematics-II", branch: "cse", semester: "2", year: "2023", subject: "applied_maths_2", type: "book", path: "#", fileName: "eng_maths_2.pdf", author: "B.S. Grewal" },
-            { id: 107, title: "Applied Physics-II", branch: "cse", semester: "2", year: "2023", subject: "Applied_physics_II", type: "book", path: "#", fileName: "app_physics_2.pdf", author: "R.K. Gaur" },
-            { id: 108, title: "Introduction to IT Systems", branch: "cse", semester: "2", year: "2023", subject: "it_system", type: "book", path: "#", fileName: "it_systems.pdf", author: "A. Goel" },
-            { id: 109, title: "Basic Electrical Engineering", branch: "cse", semester: "2", year: "2023", subject: "FEEE", type: "book", path: "#", fileName: "basic_electrical.pdf", author: "V.K. Mehta" },
-            { id: 110, title: "Engineering Mechanics", branch: "cse", semester: "2", year: "2023", subject: "Engineering_mechnics", type: "book", path: "#", fileName: "eng_mechanics.pdf", author: "S.S. Bhavikatti" },
-
-            // Add more books and papers for other branches and semesters...
-            // Electrical Engineering Books
-            { id: 201, title: "Electrical Circuit Analysis", branch: "ee", semester: "3", year: "2023", subject: "electrical_circuits", type: "book", path: "#", fileName: "circuit_analysis.pdf", author: "A. Chakrabarti" },
-            { id: 202, title: "Electrical Machines-I", branch: "ee", semester: "3", year: "2023", subject: "electric_machine_1", type: "book", path: "#", fileName: "electrical_machines_1.pdf", author: "P.S. Bimbhra" },
-            
-            // Civil Engineering Books
-            { id: 301, title: "Building Construction", branch: "civil", semester: "3", year: "2023", subject: "building_construction", type: "book", path: "#", fileName: "building_construction.pdf", author: "B.C. Punnia" },
-            { id: 302, title: "Surveying", branch: "civil", semester: "3", year: "2023", subject: "basic_surveying", type: "book", path: "#", fileName: "surveying.pdf", author: "S.K. Duggal" },
-            
-            // Mechanical Engineering Books
-            { id: 401, title: "Thermodynamics", branch: "mechanical", semester: "3", year: "2023", subject: "thermal_engineering_1", type: "book", path: "#", fileName: "thermodynamics.pdf", author: "P.K. Nag" },
-            { id: 402, title: "Strength of Materials", branch: "mechanical", semester: "4", year: "2023", subject: "strength_materials", type: "book", path: "#", fileName: "strength_materials.pdf", author: "R.K. Bansal" },
-            
-            // Electronics Engineering Books
-            { id: 501, title: "Electronic Devices", branch: "electronics", semester: "3", year: "2023", subject: "electronics_devices", type: "book", path: "#", fileName: "electronic_devices.pdf", author: "Boylestad" },
-            { id: 502, title: "Digital Electronics", branch: "electronics", semester: "3", year: "2023", subject: "digital_electronics", type: "book", path: "#", fileName: "digital_electronics.pdf", author: "R.P. Jain" },
-            
-            // Information Technology Books
-            { id: 601, title: "Data Structures", branch: "it", semester: "3", year: "2023", subject: "data_structures", type: "book", path: "#", fileName: "data_structures.pdf", author: "Seymour Lipschutz" },
-            { id: 602, title: "Database Management", branch: "it", semester: "4", year: "2023", subject: "database_management", type: "book", path: "#", fileName: "dbms.pdf", author: "Raghu Ramakrishnan" }
-        ];
-
-        // Subject names mapping
-        const subjectNames = {
-            // Computer Science And Engineering
-            'applied_maths_1': 'Applied Mathematics-I',
-            'applied_maths_2': 'Applied Mathematics-II',
-            'applied_physics': 'Applied Physics',
-            'applied_chemistry': 'Applied Chemistry',
-            'communication_skills': 'Communication Skill',
-            'technical_drawing': 'Technical Drawing',
-            // 2nd semester start here 
-            'Engineering_mechnics': 'Engineering Mechanics',
-            'FEEE': 'FEEE',
-            'it_system': 'IT System',
-            'Applied_physics_II': 'Applied Physics II',
-            'applied_mathe_II': 'Applied Mathematics II',
-            // 3rd semester start here 
-            'data_structures': 'DBMS',
-            'programming_c': 'Programming in C',
-            'oprating_system': 'Operating System',
-            'DCCN': 'DCCN',
-            'web_technology': 'Web Technology',
-            // 4th semester start here 
-            'data_structer_c': 'Data Structure',
-            'Software_Engineering': 'Software Engineering',
-            'python': 'Python',
-            // 5th semester 
-            'programming_python': 'Programming Python',
-            'programming_PHP': 'Programming PHP',
-            'internet_of_thing': 'Internet of Things',
-            'Hardware_maintenece': 'CAHM',
-            'software_engineering': 'Software Engineering',
-            // 6th semester 
-            'android_application': 'Android Application',
-            'cloud_computing': 'Cloud Computing',
-            'industrial_mainagment': 'Industrial Management',
-
-            // Electrical Engineering
-            'applied_physics_1': 'Applied Physics-I',
-            'communication_skills_english': 'Communication Skills in English',
-            'engineering_graphics': 'Engineering Graphics',
-            'applied_physics_2': 'Applied Physics-II',
-            'it_systems': 'Introduction to IT Systems',
-            'fundamentals_ee': 'Fundamentals of Electrical & Electronics Engineering',
-            'engineering_mechanics': 'Engineering Mechanics',
-            'environmental_sciences': 'Environmental Sciences',
-            'power_generation': 'Basics of Power Generation Systems',
-            'electric_machine_1': 'Electric Machine-I',
-            'electrical_circuits': 'Electrical Circuits',
-            'electrical_measurements': 'Electrical and Electronic Measurements',
-            'power_transmission': 'Electric Power Transmission and Distribution',
-            'electric_machine_2': 'Electric Machine-II',
-            'power_electronics': 'Fundamentals of Power Electronics',
-            'indian_knowledge': 'Essence of Indian Knowledge and Tradition',
-            'plc': 'PLC',
-            'sgp': 'SGP',
-            'electrical_machine_2': 'Electrical Machine 2',
-            'imed': 'IMED',
-            'renewable_energy': 'Renewable Source of Energy',
-            'edde_2nd': 'EDDE 2nd',
-            'universal_electrical': 'Universal Electrical Energy',
-            'imree': 'IMREE',
-
-            // Electronics Engineering
-            'electronics_devices': 'Electronics Devices and Circuits',
-            'digital_electronics': 'Digital Electronics',
-            'skill_development': 'Skill Development',
-            'microprocessor': 'Microprocessor and Its Applications',
-            'electronic_communication': 'Principles of Electronic Communication',
-            'industrial_management': 'Industrial Management and Entrepreneurship Development',
-            'switchgear_protection': 'Switchgear and Protection',
-            'microprocessor_peripheral': 'Microprocessor And Peripheral devices',
-            'communication_networks': 'Communication Networks',
-            'electrical_utilization': 'Utilization of Electrical Energy',
-            'electrical_traction': 'Electrical Traction',
-            'installation_maintenance': 'Installation, Maintenance and Repair of Electrical Equipment',
-            'electrical_design': 'Electrical Design, Drawing and Estimating II',
-            'control_system': 'Control System',
-            'computer_software': 'Application of Computer Software in Electrical Engineering',
-            'universal_human_values': 'Universal Human Values',
-
-            // Civil Engineering
-            'construction_materials': 'Construction Materials',
-            'basic_surveying': 'Basic Surveying',
-            'mechanics_material': 'Mechanics of Material',
-            'building_construction': 'Building Construction',
-            'building_planning': 'Building Planning and Drawings',
-            'concrete_technology': 'Concrete Technology',
-            'hydraulics': 'Hydraulics',
-            'advance_surveying': 'Advance Surveying',
-            'theory_structure': 'Theory of Structure',
-            'rcc_design': 'Design of Reinforced Cement Concrete Structures',
-            'rcc_drawing': 'Reinforced Cement Concrete Structures Drawing',
-            'water_resource': 'Water Resource Engineering',
-            'water_waste_water': 'Water and Waste Water Engineering',
-            'railways_bridges': 'Railways, Bridges and Tunnels',
-            'earthquake_engineering': 'Earthquake Engineering',
-            'soil_mechanics': 'Soil Mechanics and Foundation Engineering',
-            'surveying_2': 'Surveying-II',
-            'waste_water_drawing': 'Waste Water and Irrigation Engineering Drawing',
-            'survey_camp': 'Survey Camp',
-            'quantity_surveying': 'Quantity Surveying and Valuation',
-            'construction_management': 'Construction Management, Accounts and Entrepreneurship Development',
-            'steel_structure': 'Design of Steel Structure',
-            'steel_drawing': 'Steel Structure Drawing',
-            'software_application': 'Software Application in Civil Engineering',
-
-            // Mechanical Engineering
-            'applied_physics_1': 'Applied Physics-I',
-            'workshop_practice': 'Engineering Workshop Practice',
-            'thermal_engineering_1': 'Thermal Engineering -I',
-            'fluid_mechanics': 'Fluid Mechanics & Hydraulic Machinery',
-            'measurements_metrology': 'Measurements & Metrology',
-            'cad_drawing': 'Computer Aided Machine Drawing Practice',
-            'strength_materials': 'Strength of Materials',
-            'industrial_engineering': 'Industrial Engineering & Management',
-            'manufacturing_engineering': 'Manufacturing Engineering',
-            'material_science': 'Material Science & Engineering',
-            'thermal_engineering_2': 'Thermal Engineering -II',
-            'industrial_training': 'Industrial Training',
-            'theory_machines': 'Theory of Machines',
-            'machine_design': 'Machine Design',
-            'production_technology': 'Production Technology',
-            'production_management': 'Production Management',
-            'automobile_engineering': 'Automobile Engineering',
-            'industrial_engineering_2': 'Industrial Engineering',
-            'metrology_instruments': 'Metrology and Measuring Instruments',
-            'cnc_automation': 'CNC Machines and Automation',
-            'elective': 'Elective',
-
-            // Information Technology
-            'web_development_php': 'Web Development using PHP',
-            'information_security': 'Information Security & IT Laws',
-            'android_development': 'Development of Android Applications',
-            
-            // Additional subjects for books
-            'database_management': 'Database Management'
-        };
-
-        // Branch names mapping
-        const branchNames = {
-            'cse': 'Computer Science & Engineering',
-            'ee': 'Electrical Engineering',
-            'civil': 'Civil Engineering',
-            'mechanical': 'Mechanical Engineering',
-            'electronics': 'Electronics Engineering',
-            'it': 'Information Technology'
-        };
-
-        // Function to display featured PDFs (limited number)
-        function displayFeaturedPDFs() {
-            const featuredPdfList = document.getElementById('featuredPdfList');
-            const featuredBookList = document.getElementById('featuredBookList');
-
-            // Show only 5 featured PDFs
-            const featuredPDFs = resourceData.filter(r => r.type === 'pyq').slice(0, 5);
-            const featuredBooks = resourceData.filter(r => r.type === 'book').slice(0, 5);
-
-            featuredPdfList.innerHTML = '';
-            featuredBookList.innerHTML = '';
-
-            featuredPDFs.forEach(resource => {
-                const resourceItem = createResourceItem(resource);
-                featuredPdfList.appendChild(resourceItem);
-            });
-
-            featuredBooks.forEach(resource => {
-                const resourceItem = createResourceItem(resource);
-                featuredBookList.appendChild(resourceItem);
-            });
-        }
-
-        // Function to create resource item
-        function createResourceItem(resource) {
-            const resourceItem = document.createElement('div');
-            resourceItem.className = resource.type === 'book' ? 'resource-item book-item' : 'resource-item';
-            resourceItem.onclick = () => openResource(resource.path, resource.fileName);
-
-            const iconClass = resource.type === 'book' ? 'resource-icon book-icon' : 'resource-icon';
-            const icon = resource.type === 'book' ? 'fa-book' : 'fa-file-pdf';
-            const tagClass = resource.type === 'book' ? 'resource-tag book-tag' : 'resource-tag';
-            const infoClass = resource.type === 'book' ? 'resource-info book-info' : 'resource-info';
-
-            resourceItem.innerHTML = `
-                <div class="${iconClass}">
-                    <i class="fas ${icon}"></i>
-                </div>
-                <div class="${infoClass}">
-                    <h4>${resource.title}</h4>
-                    <p>${branchNames[resource.branch]} - Semester ${resource.semester}</p>
-                    ${resource.type === 'book' && resource.author ? `<p><strong>Author:</strong> ${resource.author}</p>` : ''}
-                    <div class="resource-meta">
-                        <span class="${tagClass}">${resource.type === 'book' ? 'Book' : resource.year}</span>
-                        <span class="${tagClass}">${subjectNames[resource.subject]}</span>
-                    </div>
-                </div>
-            `;
-
-            return resourceItem;
-        }
-
-        // Function to display search results
-        function displaySearchResults(resources) {
-            const searchResultsList = document.getElementById('searchResultsList');
-            const noResults = document.getElementById('noResults');
-            const searchInfo = document.getElementById('searchInfo');
-
-            if (resources.length === 0) {
-                searchResultsList.style.display = 'none';
-                noResults.style.display = 'block';
-                searchInfo.textContent = '';
-                return;
-            }
-
-            searchResultsList.style.display = 'grid';
-            noResults.style.display = 'none';
-
-            // Show search info
-            searchInfo.textContent = `Found ${resources.length} resource(s) matching your search criteria.`;
-
-            searchResultsList.innerHTML = '';
-
-            resources.forEach(resource => {
-                const resourceItem = createResourceItem(resource);
-                searchResultsList.appendChild(resourceItem);
-            });
-        }
-
-        // Function to populate subject dropdown
-        function populateSubjectDropdown() {
-            const subjectSelect = document.getElementById('subject');
-            const uniqueSubjects = [...new Set(resourceData.map(resource => resource.subject))];
-
-            uniqueSubjects.forEach(subject => {
-                const option = document.createElement('option');
-                option.value = subject;
-                option.textContent = subjectNames[subject];
-                subjectSelect.appendChild(option);
-            });
-        }
-
-        // Function to apply filters
-        function applyFilters() {
-            const resourceType = document.getElementById('resourceType').value;
-            const branch = document.getElementById('branch').value;
-            const semester = document.getElementById('semester').value;
-            const subject = document.getElementById('subject').value;
-
-            const filteredResources = resourceData.filter(resource => {
-                return (resourceType === 'all' || resource.type === resourceType) &&
-                    (branch === 'all' || resource.branch === branch) &&
-                    (semester === 'all' || resource.semester === semester) &&
-                    (subject === 'all' || resource.subject === subject);
-            });
-
-            displaySearchResults(filteredResources);
-            
-            // Scroll to results
-            document.getElementById('search-results').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Function to reset filters
-        function resetFilters() {
-            document.getElementById('resourceType').value = 'all';
-            document.getElementById('branch').value = 'all';
-            document.getElementById('semester').value = 'all';
-            document.getElementById('subject').value = 'all';
-
-            // Clear search results
-            document.getElementById('searchResultsList').innerHTML = '';
-            document.getElementById('searchInfo').textContent = '';
-            document.getElementById('noResults').style.display = 'none';
-        }
-
-        // Function to open resource
-        function openResource(resourcePath, fileName) {
-            if (resourcePath === '#') {
-                alert(`Resource "${fileName}" link not configured yet. Please add your resource path in the code.`);
-                return;
-            }
-            window.open(resourcePath, '_blank');
-        }
-
-        // Tab functionality
-        function setupTabs() {
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class from all buttons and contents
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    tabContents.forEach(c => c.classList.remove('active'));
-
-                    // Add active class to clicked button
-                    btn.classList.add('active');
-
-                    // Show corresponding content
-                    const tabId = btn.getAttribute('data-tab');
-                    document.getElementById(`${tabId}-content`).classList.add('active');
-                });
-            });
-        }
-
         // Mobile menu toggle
         document.getElementById('menuToggle').addEventListener('click', function () {
             const nav = document.getElementById('mainNav');
@@ -1328,32 +406,6 @@
                 nav.classList.remove('active');
             });
         });
-
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', function () {
-            populateSubjectDropdown();
-            displayFeaturedPDFs();
-            setupTabs();
-        });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.resource-item, .stat-item').forEach(el => {
-            observer.observe(el);
-        });
     </script>
 </body>
-
 </html>
